@@ -524,9 +524,8 @@ CPPFLAGS      = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -DARDUINO=$(ARDUINO_VERSION) \
 			$(SYS_INCLUDES) $(USER_INCLUDES) -g -Os -w -Wall \
 			-DUSB_VID=$(USB_VID) -DUSB_PID=$(USB_PID) \
 			-ffunction-sections -fdata-sections
-
-CFLAGS        = -std=gnu99
-CXXFLAGS      = -fno-exceptions
+CFLAGS        := $(CFLAGS) -std=gnu99
+CXXFLAGS      := $(CXXFLAGS) -fno-exceptions
 ASFLAGS       = -mmcu=$(MCU) -I. -x assembler-with-cpp
 LDFLAGS       = -mmcu=$(MCU) -Wl,--gc-sections -Os
 
